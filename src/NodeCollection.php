@@ -46,7 +46,7 @@ class NodeCollection implements \IteratorAggregate
      *
      * @var array $nodes
      */
-    private $nodes = array();
+    private $nodes = [];
 
     /**
      * Return the nodes as an array
