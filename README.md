@@ -1,14 +1,17 @@
 [![Build Status](https://travis-ci.org/tebru/tree.svg?branch=master)](https://travis-ci.org/tebru/tree)
 
 # Tree Data Structure
-This library aims to provide an object oriented way to create a tree data structure. Each node has a user defined unique id by which it is referenced.
+This library aims to provide an object oriented way to create a tree data structure.
+Each node has a user defined unique id by which it is referenced.
 
 ## Installing the project
 Run `composer require tebru/tree:1.0.*`
 
 ## Creating the tree
 Creating a tree is really easy.  All you have to do is instantiate it:
+
 `$tree = new Tree();`
+
 This will create the tree object and create a root node to act upon.
 
 ### Create a node
@@ -23,11 +26,14 @@ There are many options for creating a node.
 
 ### Remove a node
 Just pass in the node id:
+
 `$tree->removeNode('node');`
+
 This will remove that node and all of its children from the tree.
 
 ### Move a node
 This is also easy.  Just specify the node id of the node you wish to move and the node id of its new parent:
+
 `$tree->moveNode('node', 'newNodeId');`
 
 ## Testing
