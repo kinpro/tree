@@ -206,10 +206,16 @@ class Node
      * @param int $position
      *
      * @return $this
+     *
+     * @throws \UnexpectedValueException
      */
     public function setPosition($position)
     {
-        $this->position = (int)$position;
+        if (null !== $position && !is_int($position)) {
+            throw new \UnexpectedValueException('Position must be an integer or null');
+        }
+
+        $this->position = $position;
 
         return $this;
     }

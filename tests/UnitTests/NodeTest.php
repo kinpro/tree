@@ -40,4 +40,29 @@ class NodeTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue(0 === $node->getChildren()->count());
     }
+
+    public function testSetPositionInt()
+    {
+        $node = new Node(Tree::ROOT_NODE_ID);
+        $node->setPosition(1);
+
+        $this->assertTrue(1 === $node->getPosition());
+    }
+
+    public function testSetPositionNull()
+    {
+        $node = new Node(Tree::ROOT_NODE_ID);
+        $node->setPosition(null);
+
+        $this->assertTrue(null === $node->getPosition());
+    }
+
+    /**
+     * @expectedException \UnexpectedValueException
+     */
+    public function testSetPositionWillThrowException()
+    {
+        $node = new Node(Tree::ROOT_NODE_ID);
+        $node->setPosition('1');
+    }
 }
