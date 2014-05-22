@@ -145,4 +145,13 @@ class TreeTest extends \PHPUnit_Framework_TestCase
     {
         $this->tree->moveNode('root', 'bar');
     }
+
+    public function testGetTree()
+    {
+        $this->tree->createNode('node');
+        $tree = $this->tree->getTree();
+        $root = $this->tree->findNode(Tree::ROOT_NODE_ID);
+
+        $this->assertTrue($root === $tree);
+    }
 }
