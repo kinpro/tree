@@ -76,13 +76,13 @@ class Tree
     }
 
     /**
-     * Get the full tree structure as an array
+     * Get the root node
      *
-     * @return array
+     * @return Node
      */
     public function getTree()
     {
-        return $this->nodeCollection->toArray();
+        return $this->nodeCollection->find(self::ROOT_NODE_ID);
     }
 
     /**
